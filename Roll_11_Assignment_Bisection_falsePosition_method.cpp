@@ -20,12 +20,15 @@ using namespace std;
 int main()
 {
     //freopen("out.txt","w+",stdout);
-    cout<<1/3<<" "<<1/2<<" "<<4/5<<endl;
+
     double x0, x1, x, f0, f1, f, e, oldx, conv, guess_step;
     int step = 1;
     vector<double> cBi,errBi,cFP,errFP;
     cout << setprecision(6) << fixed;
     cout<<1/3<<" "<<1/2<<" "<<4/5<<endl;
+
+    // if the root does not converge within the guess
+    // then repeat
 repeat:
     cout << "Enter first guess: ";
     cin >> x0;
@@ -53,6 +56,8 @@ repeat:
     }
 
     cout << "Bisection Method" << endl << endl;
+
+    // formula : x2= (x1+x2)/2
     do
     {
         x = (x0 + x1)/2;
@@ -61,6 +66,7 @@ repeat:
         errBi.push_back(((fabs((x-oldx)/x)))*100);
 
         oldx=x;
+        // output each iterations
         cout << "Iteration - " << step << " : x = " << setw(10) << x << " and f(x) = " << setw(10) << f(x) <<  endl;
         if( f0 * f < 0)
         {
@@ -87,6 +93,9 @@ repeat:
 
 
     int stepFP =1;
+
+    // false position formula :
+    // x = x1 - ((f1*(x1-x0))/(f1-f0));
     do
     {
         x = x1 - ((f1*(x1-x0))/(f1-f0));

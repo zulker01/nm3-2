@@ -31,6 +31,10 @@ int main()
      cout<< endl<<"**************"<< endl;
 	 cout<<"Secant Method"<< endl;
 	 cout<<"**************"<< endl;
+
+
+	 // formula :
+	 //  x2=x0-f(x0)((x1-x0)/(f(x1)-f(x0))
 	 do
 	 {
 		  f0 = f(x0);
@@ -44,6 +48,7 @@ int main()
 		  x2 = x1 - (x1 - x0) * f1/(f1-f0);
 		  f2 = f(x2);
 
+		  // output each steps
 		  cout<<"Iteration-"<< step<<":\t x2 = "<< setw(10)<< x2<<" and f(x2) = "<< setw(10)<< f(x2)<< endl;
 
 		  x0 = x1;
@@ -53,6 +58,8 @@ int main()
 
 		  step = step + 1;
 
+		  // if root is not found within step limit, then
+		  // root does not converge to zero within this
 		  if(step > N)
 		  {
 			   cout<<"Not Convergent.";
@@ -60,6 +67,7 @@ int main()
 		  }
 	 }while(fabs(f2)>e);
 
+	 // output the root
 	 cout<< endl<<"Root is: "<< x2;
 
 	 return 0;

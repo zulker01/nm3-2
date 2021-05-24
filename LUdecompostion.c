@@ -8,6 +8,8 @@ upper triangular matrix U
 #include<stdio.h>
 #include<math.h>
 
+// this function takes matrix pointer & size
+// outputs the matrix
 void print_matrix(double *a,int n)
 {
     int  j=0;

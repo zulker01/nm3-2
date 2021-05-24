@@ -1,4 +1,4 @@
-
+// this code does the root finding with newton_rapson method
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
@@ -26,6 +26,9 @@ void main()
 	 scanf("%d", &N);
 	 /* Implementing Newton Raphson Method */
 	 printf("\nStep\t\tx0\t\tf(x0)\t\tx1\t\tf(x1)\n");
+
+	 // newton rapson formula : x1 = x0 - f0/g0;
+
 	 do
 	 {
 		  g0 = g(x0);
